@@ -6,7 +6,7 @@ const { scrollPageToBottom } = require('puppeteer-autoscroll-down');
 const total_pages = 5;
 const show_browser = false;
 const file_name = 'reviews';
-const file_save_path = './';
+const file_save_path = './reviews/';
 
 const collect = async () => {
   const browser = await puppeteer.launch({ headless: !show_browser });
@@ -141,7 +141,7 @@ const collect = async () => {
   await browser.close();
 };
 
-cron.schedule('0 3 * * *', collect, {
+cron.schedule('*/5 * * * *', collect, {
   scheduled: true,
   timezone: "America/Sao_Paulo"
 });
