@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 
 app.get('/send', (req, res) => {
   try {
-    const dataraw = fs.readFileSync(`./reviews-${date}.json`);
+    const dataraw = fs.readFileSync(`./reviews/reviews-${date}.json`);
     const json = JSON.parse(dataraw);
 
     if (json) {
